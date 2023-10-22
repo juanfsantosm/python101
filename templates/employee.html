@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flash Card</title>
+</head>
+<body>
+<h1>Employee</h1>
+    Name: {{  employee.name }} <br>
+    Email: {{  employee.email }} <br>
+    Age: {{  employee.age }}
+    <p>
+         <a href="{{ url_for( 'welcome' ) }}">
+                Home
+        </a>
+        <br/>
+        <button>
+            {% if index < max_index %}
+            <a href="{{ url_for( 'employee_view', index=index + 1) }}">
+                Next employee
+            </a>
+            {% else %}
+            <a href="{{ url_for( 'employee_view', index=0) }}">
+                Next employee
+            </a>
+            {% endif %}
+        </button>
+    </p>
+</body>
+</html>
